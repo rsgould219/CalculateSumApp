@@ -1,0 +1,21 @@
+@{
+    ViewBag.Title = "Info Page";
+}
+
+<h1>Welcome to Info Page</h1>
+
+<form asp-controller="Home" asp-action="infoQuery" method="post">
+
+    <span>Enter Name : </span> <input id="Text1" type="text" name="txtName" /> <br /><br />
+    <span>Enter Country : </span> <input id="Text2" type="text" name="txtCountry" /> <br /><br />
+    <span>Enter Email : </span> <input id="Text2" type="text" name="txtEmail" /> <br /><br />
+    <input id="Submit1" type="submit" value="Query" />
+</form>
+
+<h2>@ViewBag.Result</h2>
+
+@if(ViewBag.QueryResult != null){
+    foreach(string s in ViewBag.QueryResult){
+   <h2>@s</h2> 
+    }
+}
